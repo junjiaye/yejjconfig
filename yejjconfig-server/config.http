@@ -1,0 +1,26 @@
+### update app1
+POST http://localhost:9129/update?app=app1&ns=public&env=dev
+Content-Type: application/json
+
+{
+  "yejj.a": "dev2222",
+  "yejj.b": "http://localhost:2222",
+  "yejj.d": 2222
+}
+
+### update only a
+POST http://localhost:9129/update?app=app1&ns=public&env=dev
+Content-Type: application/json
+
+{
+  "yejj.a": "dev111111"
+}
+
+### get list
+GET http://localhost:9129/list?app=app1&ns=public&env=dev
+
+### get info 29
+GET http://localhost:9129/info
+
+### get info 30
+GET http://localhost:9130/info
