@@ -108,7 +108,7 @@ public class PlaceholderHelper {
                     stack.push(placeholderCandidate.substring(0, separatorIndex));
                     String defaultValuePart =
                             normalizeToPlaceholder(placeholderCandidate.substring(separatorIndex + VALUE_SEPARATOR.length()));
-                    if (!StringUtils.hasText(defaultValuePart)) {
+                    if (StringUtils.hasText(defaultValuePart)) {
                         stack.push(defaultValuePart);
                     }
                 }
@@ -117,7 +117,7 @@ public class PlaceholderHelper {
             // has remaining part, e.g. ${a}.${b}
             if (endIndex + PLACEHOLDER_SUFFIX.length() < strVal.length() - 1) {
                 String remainingPart = normalizeToPlaceholder(strVal.substring(endIndex + PLACEHOLDER_SUFFIX.length()));
-                if (!StringUtils.hasText(remainingPart)) {
+                if (StringUtils.hasText(remainingPart)) {
                     stack.push(remainingPart);
                 }
             }
